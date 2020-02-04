@@ -25,7 +25,9 @@ chrome.runtime.onMessage.addListener(
         if (request.method === 'button-msg' && request.buttonMsg === 'select-site') {
             targetUrl = request.targetAddress;
             chrome.tabs.getSelected(null, function(tab){
-                leonUrl = tab.url;
+                var leonUrlFull = tab.url;
+                var match = leonUrlFull.match(/^.+?[^\/:](?=[?\/]|$)/);
+                leonUrl = match[0] ? match[0] : leonUrlFull;    
                 getCookieAndFetchToken();
 
             });
