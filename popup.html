@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+        <title>hot reload</title>
+        <script src="popup.js"></script>
+        <style>
+            body{
+                width: 275px;
+                height: 170px;
+                font-family: 'Courier New', Courier, monospace;
+                background: #040;
+                color: #9f7;
+            }
+            p{
+                font-size: 1.1em;
+				margin: 1em 0;
+            }
+            h4{
+                font-size: 1.5em;
+				margin: 0.7em 0;
+            }
+            hr {
+                color: #eee;
+                margin: 1em 0 0 0;
+                visibility: hidden;
+            }
+            hr:after {
+                content: "";
+                visibility: visible;
+                position: absolute;
+                border-top: 1px solid #370;
+                width: 92%;
+                height: 2px;
+            }
+            .btn {
+                border: 2px solid #370;
+				padding: 10px 5px;
+				font-size: 1.5em;
+				cursor: pointer;
+				text-align: center;
+				border-radius: 3px;
+
+            }
+            .btn:hover {
+                border: 2px solid #590;
+                background-color: #260;
+
+            }
+            input {
+                background-color: #010;
+                color: #7d5;
+                outline: 0;
+                font-size: 1.3em;
+				margin: 0.5em 0;
+                padding: 7px 4px;
+                border: 0;
+                width: 95%;
+            }
+            #notOkResponse {
+                color: #FA0;
+                margin-top: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="status">
+            <h4>MCS login extension</h4>
+            <p>MCS environment address: </p>
+            <input type="text" id="targetAddress">
+            <hr>
+            <div class="btn" id="action">OPEN</div>
+            <div id ="notOkResponse"></div>
+        </div>
+    </body>
+</html>

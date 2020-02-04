@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "Desktop UI extension",
+  "version": "0.1",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [{ 
+    "all_frames": true,
+    "matches": ["<all_urls>"],
+    "js":["content.js"]
+  }],
+  "icons": { "48": "icons/icon48.png",
+   "128": "icons/icon128.png" },
+ "permissions": [
+    "storage",
+    "cookies",
+    "tabs",
+    "webNavigation",
+    "contextMenus",
+    "*://leonru.dev.leoncorp.net/*"
+],
+  "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "Hot reload settings for Desktop UI builder for Leon"
+    }
+}
