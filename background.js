@@ -10,7 +10,7 @@ xhr.onreadystatechange = function() {
             chrome.runtime.sendMessage({
                 method: "button-answer",
                 status: 'ERROR',
-                msg: "Couldn't connect to builder server: error " + xhr.status
+                msg: "Couldn't open MCS page: error " + xhr.status
             }, function(response) {
                 /** NO RESPONSE EXPECTED YET */
             });
